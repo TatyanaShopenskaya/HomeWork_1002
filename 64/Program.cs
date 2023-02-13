@@ -5,12 +5,15 @@
 
 Console.WriteLine("Введите натуральное число");
 int number = Convert.ToInt32(Console.ReadLine());
+Console.WriteLine("-------------------------------");
+Console.Write($"N = {number}   ->   ");
 
 NaturalNumbers(number);        //вызываем метод рекурсии
 
 void NaturalNumbers(int num)   //задаем рекурсивную функцию 
 {
     if (num==0) return;        //условие выхода из РЕКУРСИИ      
-    Console.Write($"{num}  ");
-    NaturalNumbers(num-1);
+    Console.Write($"{num}");
+    if (num>1) Console.Write(",   ");
+    if (num<1) Console.Write("Введены некорректные данные");
 }
